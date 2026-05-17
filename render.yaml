@@ -2,14 +2,6 @@ services:
   - type: web
     name: birthday-surprise
     runtime: static
-    staticPublishPath: .
-    buildCommand: ""
+    buildCommand: echo 'static'
+    staticPublishPath: ./
     pullRequestPreviewsEnabled: false
-    headers:
-      - path: /*
-        name: Cache-Control
-        value: no-cache
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
